@@ -11,6 +11,11 @@ public class FriedmanMain {
 	
 //	list all available chatbots under this class
 
+//	"how" triggers offtopicBot
+//	"hillary" triggers hillarybot
+//	
+	
+	
 //	add group chatbots below (see example)
 //	static Chatbot school;
 	

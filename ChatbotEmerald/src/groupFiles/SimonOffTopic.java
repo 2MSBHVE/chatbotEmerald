@@ -2,32 +2,42 @@ package groupFiles;
 
 public class SimonOffTopic implements Chatbot {
 
-	private boolean inOffTopicLoop;
-	private String offTopicResponse;
-	
+	private String userResponse;
+	private int offTopic = 0;
+	private String firstPrompt = "We're gonna make America great again!  Want to know how?";
 	private String[] offTopicResponses = {
-			"We already said hello. "
-			+ "Let's move the conversation along.", "You said hello already, did you forget?"};
+			"I have the best people, the best", 
+			"we're going to make the best plan you've ever seen",
+			"The wall just got 10 feet higher",
+			"We're going to make Mexico pay for it",
+			"I know alot of words, I know the best words"
+			};
 	public void talk() {
-		inOffTopicLoop = true;
-		while(inOffTopicLoop){
-			FriedmanMain.println("(Type 'quit' to go back.)");
-			offTopicResponse = FriedmanMain.promptInput("");
-			if(offTopicResponse.indexOf("quit") >= 0){
-				inOffTopicLoop = false;
-				FriedmanMain.promptInputForever("");
-			}
-			FriedmanMain.println("That's my favorite part about school!");
-		}
+		
+	if(offTopic<1){
+		userResponse = FriedmanMain.promptInput(firstPrompt);
+	}
+	else{
+		userResponse = FriedmanMain.promptInput(FriedmanMain.chooseFromStringArray(offTopicResponses));
 		
 	}
+
+	
+			offTopic++;
+	}
+		
+	
+
+
 
 	public boolean isTriggered(String userInput) {
 //		String[] triggers = {"school", "class", "teacher"};
 //		for(int i = 0; ){}
 		
 		if(FriedmanMain.findKeyword(userInput, "how", 0) >= 0){
+			
 			return true;
+		
 		}
 		return false;
 	}

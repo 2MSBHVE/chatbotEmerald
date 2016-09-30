@@ -1,3 +1,5 @@
+// THIS FILE IS HERE AS KIND OF A TEMPLATE
+
 package groupFiles;
 
 public class FriedmanSchool implements Chatbot {

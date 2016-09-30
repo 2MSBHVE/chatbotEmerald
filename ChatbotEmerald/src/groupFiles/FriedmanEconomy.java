@@ -2,6 +2,8 @@ package groupFiles;
 
 public class FriedmanEconomy implements Chatbot{
 
+	private int numTimesAsked = 0;
+	
 	private String userResponse;
 	
 	private String firstPrompt = "penis";
@@ -15,20 +17,15 @@ public class FriedmanEconomy implements Chatbot{
 
 	public void talk() {
 		
-		/*SOME FUNCTION GOES IN THERE*/
-		
-		if (offTopic < 1){
+		if (numTimesAsked < 1){
 			userResponse = FriedmanMain.promptInput(firstPrompt);
 		}
 		else {
-			userResponse = FriedmanMain.promptInput(chooseFromStringArray(strategyResponses));
+			userResponse = FriedmanMain.promptInput(FriedmanMain.chooseFromStringArray(strategyResponses));
 		}
 		
-	}
-
-	private String chooseFromStringArray(String[] stringArray) {
-		int responseSelection = (int)(Math.random()*stringArray.length);
-		return stringArray[responseSelection];
+		numTimesAsked++;
+		
 	}
 
 	public boolean isTriggered(String userInput) {

@@ -21,6 +21,8 @@ public class FriedmanMain {
 	
 	public static void main(String[] args) {
 //		demonstrateStringMethods();
+		printwrap("*CROWD CHEERS*");
+		printwrap("*DRAMATIC ENTRANCE*");
 		createFields();
 		promptName();
 //		promptInput("Please type something.");
@@ -46,7 +48,7 @@ public class FriedmanMain {
 	public static void promptInputForever(String prompt) {
 		inMainLoop = true;
 		while(inMainLoop){
-			prompt = "Hi, " + user + "! How are you?";
+//			prompt = "Hi, " + user + "! How are you?";
 			response = promptInput(prompt);
 			if(findKeyword(response, "good", 0) >= 0){
 //				println("true");

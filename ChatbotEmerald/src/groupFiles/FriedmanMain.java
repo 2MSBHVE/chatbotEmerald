@@ -18,6 +18,7 @@ public class FriedmanMain {
 	
 //	add group chatbots below (see example)
 //	static Chatbot school;
+	static Chatbot offTopic;
 	
 	public static void main(String[] args) {
 //		demonstrateStringMethods();
@@ -54,6 +55,15 @@ public class FriedmanMain {
 //				println("true");
 				println("That's wonderful! I'm glad you feel good.");
 			}
+			
+			else if (offTopic.isTriggered(response)){
+//				println("true");
+//				println("!");
+//				exit loop
+				inMainLoop = false;
+//				go to school's talk method
+				offTopic.talk();
+		}
 			
 			//response to liking school
 //			else if (school.isTriggered(response) >= 0){
@@ -153,6 +163,7 @@ public class FriedmanMain {
 		
 //		initialize group chatbots below
 //		school = new FriedmanSchool();
+		offTopic = new SimonOffTopic();
 	}
 
 	public static void demonstrateStringMethods(){

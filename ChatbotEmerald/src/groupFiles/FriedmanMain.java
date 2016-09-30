@@ -227,7 +227,7 @@ public class FriedmanMain {
 		return currentCut;
 	}
 
-	public static String chooseFromStringArray(String[] stringArray) {
+	private static String chooseFromStringArray(String[] stringArray) {
 		int responseSelection = (int)(Math.random()*stringArray.length);
 		return stringArray[responseSelection];
 	}

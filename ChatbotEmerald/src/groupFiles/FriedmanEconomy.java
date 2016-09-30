@@ -9,7 +9,7 @@ public class FriedmanEconomy implements Chatbot{
 
 	public void talk() {
 		
-			userResponse = FriedmanMain.promptInput("Type something, fucker.");
+			userResponse = FriedmanMain.promptInput("");
 			FriedmanMain.printwrap(chooseFromStringArray(strategyResponses));
 		
 	}

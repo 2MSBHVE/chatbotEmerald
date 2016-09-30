@@ -40,7 +40,7 @@ public class FriedmanMain {
 	}
 
 	public static String promptInput(String prompt) {
-		println(prompt);
+		printwrap(prompt);
 		String userInput = input.nextLine();
 		return userInput;
 	}

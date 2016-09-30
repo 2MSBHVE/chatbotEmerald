@@ -19,6 +19,7 @@ public class FriedmanMain {
 //	add group chatbots below (see example)
 //	static Chatbot school;
 	static Chatbot offTopic;
+	static Chatbot economy;
 	
 	public static void main(String[] args) {
 //		demonstrateStringMethods();
@@ -36,7 +37,11 @@ public class FriedmanMain {
 	public static void promptName() {
 		println("Enter your name.");
 		user = input.nextLine();
-		printwrap("Okay. For the rest of time, I will call you " + user + ". You may call me Computer. We should become friends.");
+		if(findKeyword(user, "Hillary", 0) >= 0){
+			
+		}
+		printwrap("Okay. For the rest of time, I will call you " + user + ". "
+				+ "You may call me Computer. We should become friends.");
 		
 	}
 
@@ -63,6 +68,15 @@ public class FriedmanMain {
 				inMainLoop = false;
 //				go to school's talk method
 				offTopic.talk();
+		}
+			
+			else if (economy.isTriggered(response)){
+//				println("true");
+//				println("!");
+//				exit loop
+				inMainLoop = false;
+//				go to school's talk method
+				economy.talk();
 		}
 			
 			//response to liking school
@@ -164,6 +178,7 @@ public class FriedmanMain {
 //		initialize group chatbots below
 //		school = new FriedmanSchool();
 		offTopic = new SimonOffTopic();
+		economy = new FriedmanEconomy();
 	}
 
 	public static void demonstrateStringMethods(){

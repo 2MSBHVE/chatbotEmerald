@@ -32,4 +32,10 @@ public class FriedmanSchool implements Chatbot {
 		return false;
 	}
 
+	@Override
+	public void talk(String userTyped) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

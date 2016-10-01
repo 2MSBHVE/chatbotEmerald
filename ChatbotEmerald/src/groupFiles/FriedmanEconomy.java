@@ -20,19 +20,19 @@ public class FriedmanEconomy implements Chatbot{
 	
 
 	public void talk() {
-		
-		if (numTimesAsked < 1){
-			userResponse = FriedmanMain.promptInput(firstPrompt);
-		}
-		else if (FriedmanMain.findKeyword(userResponse, "Mexico", 0) >= 0){
-			
-		}
-		else {
-			userResponse = FriedmanMain.promptInput(FriedmanMain.chooseFromStringArray(strategyResponses));
-		}
-		
-		numTimesAsked++;
-		
+//		
+//		if (numTimesAsked < 1){
+//			userResponse = FriedmanMain.promptInput(firstPrompt);
+//		}
+////		else if (FriedmanMain.findKeyword(userResponse, "Mexico", 0) >= 0){
+////			
+////		}
+//		else {
+//			userResponse = FriedmanMain.promptInput(FriedmanMain.chooseFromStringArray(strategyResponses));
+//		}
+//		
+//		numTimesAsked++;
+//		
 	}
 
 	public boolean isTriggered(String userInput) {
@@ -45,10 +45,12 @@ public class FriedmanEconomy implements Chatbot{
 		return false;
 	}
 
-	@Override
+	
 	public void talk(String userTyped) {
-		// TODO Auto-generated method stub
-		
+		if (FriedmanMain.findKeyword(userTyped, "Mexico", 0) >= 0){
+			FriedmanMain.promptInput("It's all gonna start with the wall. We're gonna employ lots and lots of people to build that wall."
+					+ "Respectable jobs with good pay. And speaking of pay, who's gonna pay for it?! MEXICO!");
+		}
 	}
 
 }

@@ -130,23 +130,23 @@ public class FriedmanMain {
 //			check character in front, if it exists
 			if(pos > 0){
 				before = searchString.substring(pos-1, pos);
-				System.out.println("The character before us is " + before);
+//				System.out.println("The character before us is " + before);
 			}
 			
 //			check if there is a character after the keyword
 			if(pos + keyword.length() < searchString.length()){
 				after = searchString.substring((pos + keyword.length()),(pos + keyword.length() + 1));
-				System.out.println("The character after us is " + after);
+//				System.out.println("The character after us is " + after);
 			}
 			
 			if(before.compareTo("a") < 0 && after.compareTo("a") < 0 && noNegotiations(searchString, pos)){
-				System.out.println("Found " + keyword + " at " + pos);
+//				System.out.println("Found " + keyword + " at " + pos);
 				return pos;
 			}
 			else{
 //				pos + 1 is one space after our current position, so this finds the NEXT word
 				pos = searchString.indexOf(keyword, (pos + 1));
-				System.out.println("Did not find " + keyword + ", checking position " + pos);
+//				System.out.println("Did not find " + keyword + ", checking position " + pos);
 			}
 			
 		}

@@ -77,15 +77,6 @@ public class FriedmanMain {
 				println("That's wonderful! I'm glad you feel good.");
 			}
 			
-			else if (offTopic.isTriggered(response)){
-//				println("true");
-//				println("!");
-//				exit loop
-//				inMainLoop = false;
-//				go to school's talk method
-				offTopic.talk();
-		}
-			
 			else if (economy.isTriggered(response)){
 //				println("true");
 //				println("!");
@@ -93,6 +84,16 @@ public class FriedmanMain {
 //				inMainLoop = false;
 //				go to school's talk method
 				economy.talk(response);
+			}
+			
+//			LEAVE OFFTOPICBOT LAST BECAUSE "HOW" IS A COMMON WORD!!!!!!!!!
+			else if (offTopic.isTriggered(response)){
+//				println("true");
+//				println("!");
+//				exit loop
+//				inMainLoop = false;
+//				go to school's talk method
+				offTopic.talk();
 		}
 			
 			//response to liking school

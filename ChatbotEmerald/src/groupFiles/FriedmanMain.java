@@ -37,8 +37,15 @@ public class FriedmanMain {
 	public static void promptName() {
 		println("Enter your name.");
 		user = input.nextLine();
+		
 		if(findKeyword(user, "Hillary", 0) >= 0){
 			user = "Crooked Hillary";
+		}
+		else if (findKeyword(user, "Marco", 0) >= 0) {
+			user = "Little Marco";
+		}
+		else if (findKeyword(user, "Ted", 0) >= 0) {
+			user = "Lyin' Ted";
 		}
 		printwrap("Okay. For the rest of time, I will call you " + user + ". "
 				+ "You may call me Computer. We should become friends.");

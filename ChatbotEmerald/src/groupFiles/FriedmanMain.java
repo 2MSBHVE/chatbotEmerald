@@ -56,6 +56,11 @@ public class FriedmanMain {
 		else if (findKeyword(user, "Barack", 0) >= 0 || (findKeyword(user, "Obama", 0) >= 0 && findKeyword(user, "Michelle", 0) < 0)) {
 			user = "Baby Obama";
 		}
+		else if (findKeyword(user, "Putin", 0) >= 0) {
+			user = "Vladimir";
+			printwrap("Ah, Vladimir, my friend and long-time supplier of young Slavic women!");
+			return;
+		}
 		
 		printwrap("So we've got " + user + " here ready to make America great again!");
 		

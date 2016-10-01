@@ -52,5 +52,5 @@ public class FriedmanEconomy implements Chatbot{
 					+ "Respectable jobs with good pay. And speaking of pay, who's gonna pay for it?! MEXICO!");
 		}
 	}
-
+ 
 }

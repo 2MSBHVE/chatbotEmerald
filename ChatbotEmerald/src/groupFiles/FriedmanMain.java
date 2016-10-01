@@ -38,17 +38,26 @@ public class FriedmanMain {
 		println("Enter your name.");
 		user = input.nextLine();
 		
-		if(findKeyword(user, "Hillary", 0) >= 0){
+		if (findKeyword(user, "Hillary", 0) >= 0 || (findKeyword(user, "Clinton", 0) >= 0 && findKeyword(user, "Bill", 0) < 0)) {
 			user = "Crooked Hillary";
 		}
-		else if (findKeyword(user, "Marco", 0) >= 0) {
+		else if (findKeyword(user, "Bernie", 0) >= 0 || findKeyword(user, "Sanders", 0) >= 0) {
+			user = "Crazy Bernie";
+		}
+		else if (findKeyword(user, "Marco", 0) >= 0 || findKeyword(user, "Rubio", 0) >= 0) {
 			user = "Little Marco";
 		}
-		else if (findKeyword(user, "Ted", 0) >= 0) {
+		else if (findKeyword(user, "Ted", 0) >= 0 || findKeyword(user, "Cruz", 0) >= 0) {
 			user = "Lyin' Ted";
 		}
-		printwrap("Okay. For the rest of time, I will call you " + user + ". "
-				+ "You may call me Computer. We should become friends.");
+		else if (findKeyword(user, "Elizabeth", 0) >= 0 || findKeyword(user, "Warren", 0) >= 0) {
+			user = "Goofy Elizabeth";
+		}
+		else if (findKeyword(user, "Barack", 0) >= 0 || (findKeyword(user, "Obama", 0) >= 0 && findKeyword(user, "Michelle", 0) < 0)) {
+			user = "Baby Obama";
+		}
+		
+		printwrap("So we've got " + user + " here ready to make America Great Again!");
 		
 	}
 

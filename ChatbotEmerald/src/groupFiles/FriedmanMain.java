@@ -92,7 +92,7 @@ public class FriedmanMain {
 //				exit loop
 //				inMainLoop = false;
 //				go to school's talk method
-				economy.talk();
+				economy.talk(response);
 		}
 			
 			//response to liking school

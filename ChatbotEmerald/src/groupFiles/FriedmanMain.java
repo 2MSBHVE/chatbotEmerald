@@ -56,8 +56,10 @@ public class FriedmanMain {
 		else if (findKeyword(user, "Barack", 0) >= 0 || (findKeyword(user, "Obama", 0) >= 0 && findKeyword(user, "Michelle", 0) < 0)) {
 			user = "Baby Obama";
 		}
-		else if (findKeyword(user, "Putin", 0) >= 0) {
+		else if (findKeyword(user, "Putin", 0) >= 0 || (findKeyword(user, "Vladimir", 0) >= 0 && findKeyword(user, "Putin", 0) >= 0)) {
 			user = "Vladimir";
+			
+//			replaces "so we've got..."
 			printwrap("Ah, Vladimir, my friend and long-time supplier of young Slavic women!");
 			return;
 		}
@@ -223,7 +225,7 @@ public class FriedmanMain {
 	
 	public static void printwrap(String s){
 		String printString = "";
-		int cutoff = 35;
+		int cutoff = 70;
 //		check for words to add
 //		IWO s has length > 0
 		while(s.length() > 0){

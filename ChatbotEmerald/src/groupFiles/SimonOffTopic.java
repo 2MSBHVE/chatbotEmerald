@@ -50,4 +50,13 @@ public class SimonOffTopic implements Chatbot {
 		return false;
 	}
 
+
+
+
+	@Override
+	public void talk(String userTyped) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

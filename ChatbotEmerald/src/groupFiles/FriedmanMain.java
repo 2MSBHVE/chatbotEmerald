@@ -57,7 +57,7 @@ public class FriedmanMain {
 			user = "Baby Obama";
 		}
 		
-		printwrap("So we've got " + user + " here ready to make America Great Again!");
+		printwrap("So we've got " + user + " here ready to make America great again!");
 		
 	}
 
@@ -81,7 +81,7 @@ public class FriedmanMain {
 //				println("true");
 //				println("!");
 //				exit loop
-				inMainLoop = false;
+//				inMainLoop = false;
 //				go to school's talk method
 				offTopic.talk();
 		}
@@ -90,7 +90,7 @@ public class FriedmanMain {
 //				println("true");
 //				println("!");
 //				exit loop
-				inMainLoop = false;
+//				inMainLoop = false;
 //				go to school's talk method
 				economy.talk();
 		}

@@ -36,10 +36,28 @@ public class FriedmanEconomy implements Chatbot{
 	}
 
 	public boolean isTriggered(String userInput) {
-//		String[] triggers = {"school", "class", "teacher"};
+//		String[] triggers = {"Economy", "Mexico", "jobs"};
 //		for(int i = 0; ){}
 		
 		if(FriedmanMain.findKeyword(userInput, "economy", 0) >= 0){
+			return true;
+		}
+		if(FriedmanMain.findKeyword(userInput, "Mexico", 0) >= 0){
+			return true;
+		}
+		if(FriedmanMain.findKeyword(userInput, "China", 0) >= 0){
+			return true;
+		}
+		if(FriedmanMain.findKeyword(userInput, "jobs", 0) >= 0){
+			return true;
+		}
+		if(FriedmanMain.findKeyword(userInput, "manufacturing", 0) >= 0){
+			return true;
+		}
+		if(FriedmanMain.findKeyword(userInput, "poverty", 0) >= 0){
+			return true;
+		}
+		if(FriedmanMain.findKeyword(userInput, "wage", 0) >= 0 && (FriedmanMain.findKeyword(userInput, "war", 0) < 0 && FriedmanMain.findKeyword(userInput, "wars", 0) < 0)){
 			return true;
 		}
 		return false;
@@ -47,9 +65,14 @@ public class FriedmanEconomy implements Chatbot{
 
 	
 	public void talk(String userTyped) {
+		userTyped = userTyped.toLowerCase();
 		if (FriedmanMain.findKeyword(userTyped, "Mexico", 0) >= 0){
-			FriedmanMain.promptInput("It's all gonna start with the wall. We're gonna employ lots and lots of people to build that wall."
+			FriedmanMain.printwrap("It's all gonna start with the wall. We're gonna employ lots and lots of people to build that wall."
 					+ "Respectable jobs with good pay. And speaking of pay, who's gonna pay for it?! MEXICO!");
+		}
+		
+		else {
+//			FriedmanMain.promptInput("The economy is failing. We need to improve the economy.");
 		}
 	}
  

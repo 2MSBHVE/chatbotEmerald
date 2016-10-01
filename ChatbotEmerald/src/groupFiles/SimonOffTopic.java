@@ -27,7 +27,7 @@ public class SimonOffTopic implements Chatbot {
 			}
 			else {
 				inOffTopicLoop = false;
-				FriedmanMain.promptInputForever("");
+//				FriedmanMain.promptInputForever("");
 			}
 
 

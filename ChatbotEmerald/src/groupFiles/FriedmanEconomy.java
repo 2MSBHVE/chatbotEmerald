@@ -71,8 +71,13 @@ public class FriedmanEconomy implements Chatbot{
 					+ "Respectable jobs with good pay. And speaking of pay, who's gonna pay for it?! MEXICO!");
 		}
 		
+		else if (FriedmanMain.findKeyword(userTyped, "jobs", 0) >= 0){
+			FriedmanMain.printwrap("We're gonna bring back jobs. I'm gonna make deals - great, great deals - with China that work in our favor, not theirs. "
+					+ "There's gonna be so much winning, I guarantee it.");
+		}
+		
 		else {
-//			FriedmanMain.promptInput("The economy is failing. We need to improve the economy.");
+			FriedmanMain.printwrap("The economy is failing. We need to improve the economy.");
 		}
 	}
  

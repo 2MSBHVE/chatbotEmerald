@@ -11,13 +11,13 @@ public class FriedmanSchool implements Chatbot {
 	public void talk() {
 		inSchoolLoop = true;
 		while(inSchoolLoop){
-			FriedmanMain.println("(Type 'quit' to go back.)");
-			schoolResponse = FriedmanMain.promptInput("");
+			MaxMain.println("(Type 'quit' to go back.)");
+			schoolResponse = MaxMain.promptInput("");
 			if(schoolResponse.indexOf("quit") >= 0){
 				inSchoolLoop = false;
-				FriedmanMain.promptInputForever("");
+				MaxMain.promptInputForever("");
 			}
-			FriedmanMain.println("That's my favorite part about school!");
+			MaxMain.println("That's my favorite part about school!");
 		}
 		
 	}
@@ -26,7 +26,7 @@ public class FriedmanSchool implements Chatbot {
 //		String[] triggers = {"school", "class", "teacher"};
 //		for(int i = 0; ){}
 		
-		if(FriedmanMain.findKeyword(userInput, "school", 0) >= 0){
+		if(MaxMain.findKeyword(userInput, "school", 0) >= 0){
 			return true;
 		}
 		return false;

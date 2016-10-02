@@ -2,18 +2,12 @@ package groupFiles;
 
 import java.util.Scanner;
 
-public class FriedmanMain {
+public class MaxMain {
 	
 	static String user;
 	static Scanner input;
 	static boolean inMainLoop;
 	static String response;
-	
-//	list all available chatbots under this class
-
-//	"how" triggers offtopicBot
-//	"hillary" triggers hillarybot
-//	
 	
 	
 //	add group chatbots below (see example)
@@ -35,8 +29,14 @@ public class FriedmanMain {
 	}
 	
 	public static void promptName() {
-		println("Enter your name.");
-		user = input.nextLine();
+		user = " ";
+		
+		while(user.compareTo("A") < 0){
+			println("Enter your name.");
+			user = input.nextLine();
+		}
+		
+		
 		
 		if (findKeyword(user, "Hillary", 0) >= 0 || (findKeyword(user, "Clinton", 0) >= 0 && findKeyword(user, "Bill", 0) < 0)) {
 			user = "Crooked Hillary";
@@ -76,15 +76,20 @@ public class FriedmanMain {
 
 	public static void promptInputForever(String prompt) {
 		inMainLoop = true;
+		
+		int untriggeredCount = 0;
+		
 		while(inMainLoop){
-//			prompt = "Hi, " + user + "! How are you?";
+			
 			response = promptInput(prompt);
-			if(findKeyword(response, "good", 0) >= 0){
-//				println("true");
-				println("That's wonderful! I'm glad you feel good.");
+			
+//			makes sure the user types something
+			while(response.equals("")){
+				response = promptInput(prompt);
 			}
 			
-			else if (economy.isTriggered(response)){
+			if (economy.isTriggered(response)){
+				untriggeredCount = 0;
 //				println("true");
 //				println("!");
 //				exit loop
@@ -95,6 +100,7 @@ public class FriedmanMain {
 			
 //			LEAVE OFFTOPICBOT LAST BECAUSE "HOW" IS A COMMON WORD!!!!!!!!!
 			else if (offTopic.isTriggered(response)){
+				untriggeredCount = 0;
 //				println("true");
 //				println("!");
 //				exit loop
@@ -103,18 +109,10 @@ public class FriedmanMain {
 				offTopic.talk();
 		}
 			
-			//response to liking school
-//			else if (school.isTriggered(response) >= 0){
-////				println("true");
-//				println("School is great! Tell me about school!");
-////				exit loop
-//				inMainLoop = false;
-////				go to school's talk method
-//				school.talk();
-//			}
-			
 			else{
-				println("I don't understand.");
+				untriggeredCount++;
+				println("I don't understand." + untriggeredCount);
+				;
 			}
 		}
 	}
@@ -202,7 +200,7 @@ public class FriedmanMain {
 //		initialize group chatbots below
 //		school = new FriedmanSchool();
 		offTopic = new SimonOffTopic();
-		economy = new FriedmanEconomy();
+		economy = new MaxEconomy();
 	}
 
 	public static void demonstrateStringMethods(){

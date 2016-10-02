@@ -19,15 +19,15 @@ public class SimonOffTopic implements Chatbot {
 
 		while(inOffTopicLoop){
 			if(offTopic<1){
-				userResponse = FriedmanMain.promptInput(firstPrompt);
+				userResponse = MaxMain.promptInput(firstPrompt);
 			}
-			else if (FriedmanMain.findKeyword(userResponse, "how", 0) >= 0) {
-				userResponse = FriedmanMain.promptInput(FriedmanMain.chooseFromStringArray(offTopicResponses));
+			else if (MaxMain.findKeyword(userResponse, "how", 0) >= 0) {
+				userResponse = MaxMain.promptInput(MaxMain.chooseFromStringArray(offTopicResponses));
 
 			}
 			else {
 				inOffTopicLoop = false;
-//				FriedmanMain.promptInputForever("");
+//				MaxMain.promptInputForever("");
 			}
 
 
@@ -42,7 +42,7 @@ public class SimonOffTopic implements Chatbot {
 		//		String[] triggers = {"school", "class", "teacher"};
 		//		for(int i = 0; ){}
 
-		if(FriedmanMain.findKeyword(userInput, "how", 0) >= 0){
+		if(MaxMain.findKeyword(userInput, "how", 0) >= 0){
 
 			return true;
 

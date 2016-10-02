@@ -10,10 +10,16 @@ public class MaxMain {
 	static String response;
 	
 	
-//	add group chatbots below (see example)
-//	static Chatbot school;
-	static Chatbot offTopic;
+	
+	
+//	add group chatbots below
 	static Chatbot economy;
+	static Chatbot comeback;
+	static Chatbot offTopic;
+	
+//	economy triggered by "economy" "jobs" "manufacture" "wage(w/o 'war')" "
+//	fightback triggered by "stupid", "dumb", "dumbass", "fuck", "fake", "orange", "baby"
+//	offTopic triggered by "how"
 	
 	public static void main(String[] args) {
 //		demonstrateStringMethods();
@@ -22,17 +28,17 @@ public class MaxMain {
 		createFields();
 		promptName();
 //		promptInput("Please type something.");
-		promptInputForever((String)("Please type something, " + user + "."));
+		promptInputForever((String)("So what's your question, " + user + "?"));
 //		while(true){
 //			println(input.next());
 //		}
 	}
 	
 	public static void promptName() {
-		user = " ";
+		user = "";
 		
 		while(user.compareTo("A") < 0){
-			println("Enter your name.");
+			println("What's your name?");
 			user = input.nextLine();
 		}
 		
@@ -90,30 +96,27 @@ public class MaxMain {
 			
 			if (economy.isTriggered(response)){
 				untriggeredCount = 0;
-//				println("true");
-//				println("!");
-//				exit loop
-//				inMainLoop = false;
-//				go to school's talk method
 				economy.talk(response);
+			}
+			
+			else if (comeback.isTriggered(response)){
+				untriggeredCount = 0;
+				comeback.talk();	
 			}
 			
 //			LEAVE OFFTOPICBOT LAST BECAUSE "HOW" IS A COMMON WORD!!!!!!!!!
 			else if (offTopic.isTriggered(response)){
 				untriggeredCount = 0;
-//				println("true");
-//				println("!");
-//				exit loop
-//				inMainLoop = false;
-//				go to school's talk method
 				offTopic.talk();
-		}
+				
+			}
 			
 			else{
 				untriggeredCount++;
-				println("I don't understand." + untriggeredCount);
-				;
+//				println("I don't understand." + untriggeredCount);
 			}
+			
+			prompt = MaxChangeMainPrompt.talk(untriggeredCount, user);
 		}
 	}
 	
@@ -198,9 +201,9 @@ public class MaxMain {
 		user = "";
 		
 //		initialize group chatbots below
-//		school = new FriedmanSchool();
-		offTopic = new SimonOffTopic();
 		economy = new MaxEconomy();
+		comeback = new MaxFightBack();
+		offTopic = new SimonOffTopic();
 	}
 
 	public static void demonstrateStringMethods(){
@@ -280,5 +283,18 @@ public class MaxMain {
 		return stringArray[responseSelection];
 	}
 	
+	static String[] newPrompt(){
+		
+		String[][] askMes = {
+				{"Questions, ", "?"},
+				{"So what's your question, ", "?"},
+				{"Ask away, ", "."}
+				};
+		
+		int rand = (int) (Math.random()*askMes.length);
+		return askMes[rand];
+		
+	}
 }
+
 

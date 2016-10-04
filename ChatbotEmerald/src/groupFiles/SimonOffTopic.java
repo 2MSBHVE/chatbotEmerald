@@ -13,7 +13,8 @@ public class SimonOffTopic implements Chatbot {
 			"We're going to make Mexico pay for it",
 			"I know alot of words, I know the best words",
 			"I cant talk about it, I'm under audit",
-			"I'll ask Putin"
+			"I'll ask Putin","We need to fix this rigged system",
+			"We're going to do so much winning"
 	};
 	public void talk() {
 
@@ -39,8 +40,6 @@ public class SimonOffTopic implements Chatbot {
 
 
 	public boolean isTriggered(String userInput) {
-		//		String[] triggers = {"school", "class", "teacher"};
-		//		for(int i = 0; ){}
 
 		if(MaxMain.findKeyword(userInput, "how", 0) >= 0){
 

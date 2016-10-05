@@ -21,24 +21,11 @@ public class MaxEconomy implements Chatbot{
 			};
 	
 	
-	private String[] jobsResponses = {
-			"We're gonna bring back jobs, and it's gonna be great.",
-			"It's all gonna start with the wall. We're gonna employ lots and lots of people to build that wall. "
-			+ "Respectable jobs with good pay. And speaking of pay, who's gonna pay for it? That's right; Mexico.",
-			"I'm gonna bring jobs BACK TO AMERICA, unlike Crooked Hillary and her Wall Street friends.",
-			"We're gonna bring back jobs. I'm gonna make deals - great, great deals - with China that work in our favor, not theirs. "
-			+ "There's gonna be so much winning, I guarantee it.",
-			};
 	
-	private String[] wageResponses = {
-			"There are too many people in America that aren't making enough money to live on.",
-			"The jobs created by the wall will pay, and they'll pay well, and they'll be paid by Mexico.",
-			"If you're making minimum wage you're probably an immigrant anyway. I love immigrants. Love em.",
-			};
 	
-	private String[] manufacturingResponses = {"America is going to manufacture again!",
-			"First we're gonna get rid of all those Japanese cars. Then we're gonna get rid of Japan."
-			};
+	int jobsCount = 0;
+	int wagesCount0 = 0;
+	int manufacturingCount0 = 0;
 	
 
 	public void talk() {
@@ -94,12 +81,35 @@ public class MaxEconomy implements Chatbot{
 
 	
 	public void talk(String userTyped) {
+		
+		String[] jobsResponses = {
+				"We're gonna bring back jobs, and it's gonna be great.",
+				"It's all gonna start with the wall. We're gonna employ lots and lots of people to build that wall. "
+				+ "Respectable jobs with good pay. And speaking of pay, who's gonna pay for it? That's right; Mexico.",
+				"I'm gonna bring jobs BACK TO AMERICA, unlike Crooked Hillary and her Wall Street friends.",
+				"We're gonna bring back jobs. I'm gonna make deals - great, great deals - with China that work in our favor, not theirs. "
+				+ "There's gonna be so much winning, I guarantee it.",
+				};
+		String[] wageResponses = {
+				(String)("There are" + MaxMain.multiplyWord("way", wagesCount0, true, false) 
+				+ " too many people in America that aren't making enough money to live on."),
+				"The jobs created by the wall will pay, and they'll pay well, and they'll be paid by Mexico.",
+				"If you're making minimum wage you're probably an immigrant anyway. I love immigrants. Love em.",
+				};
+		String[] manufacturingResponses = {(String)("America is going to manufacture" + MaxMain.multiplyWord("bigly", manufacturingCount0, true, false) + " again!"),
+				"First we're gonna get rid of all those Japanese cars. Then we're gonna get rid of Japan."
+				};
+		
 		userTyped = userTyped.toLowerCase();
 		if (MaxMain.findKeyword(userTyped, "jobs", 0) >= 0){
 			MaxMain.printwrap(MaxMain.chooseFromStringArray(jobsResponses));
 		}
 		else if (MaxMain.findKeyword(userTyped, "wage", 0) >= 0 || MaxMain.findKeyword(userTyped, "wages", 0) >= 0){
-			MaxMain.printwrap(MaxMain.chooseFromStringArray(wageResponses));
+			String toPrint = MaxMain.chooseFromStringArray(wageResponses);
+			if(toPrint.equals(wageResponses[0])) {
+				wagesCount0++;
+			}
+			MaxMain.printwrap(toPrint);
 		}
 		else if (MaxMain.findKeyword(userTyped, "manufacturing", 0) >= 0 
 				|| MaxMain.findKeyword(userTyped, "manufacture", 0) >= 0
@@ -107,10 +117,16 @@ public class MaxEconomy implements Chatbot{
 				|| MaxMain.findKeyword(userTyped, "manufacturers", 0) >= 0
 				|| MaxMain.findKeyword(userTyped, "manufactures", 0) >= 0
 				|| MaxMain.findKeyword(userTyped, "manufactured", 0) >= 0) {
-			MaxMain.printwrap(MaxMain.chooseFromStringArray(manufacturingResponses));
+			String toPrint = MaxMain.chooseFromStringArray(manufacturingResponses);
+			if(toPrint.equals(manufacturingResponses[0])) {
+				manufacturingCount0++;
+			}
+			MaxMain.printwrap(toPrint);
+			
 		}
 		
 		else {
+			
 			MaxMain.printwrap("The economy is failing. We need to improve the economy.");
 		}
 	}

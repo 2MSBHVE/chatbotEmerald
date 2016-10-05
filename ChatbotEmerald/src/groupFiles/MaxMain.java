@@ -17,14 +17,16 @@ public class MaxMain {
 	static Chatbot comeback;
 	static Chatbot offTopic;
 	
+	 
+	
 //	economy triggered by "economy" "jobs" "manufacture" "wage(w/o 'war')" "
 //	fightback triggered by "stupid", "dumb", "dumbass", "f***", "fake", "orange", "baby"
 //	offTopic triggered by "how"
 	
 	public static void main(String[] args) {
 //		demonstrateStringMethods();
-		printwrap("*CROWD CHEERS*");
 		printwrap("*DRAMATIC ENTRANCE*");
+		printwrap("*CROWD CHEERS*");
 		createFields();
 		promptName();
 //		promptInput("Please type something.");
@@ -295,6 +297,20 @@ public class MaxMain {
 		return askMes[rand];
 		
 	}
+	
+	static String multiplyWord(String word, int multiplier, boolean useSpaces, boolean useCommas){
+		String multipliedWord = "";
+		for(int i = 0; i < multiplier; i++){
+			if(useSpaces) {
+				multipliedWord += " ";
+			}
+			multipliedWord += word;
+			if(useCommas) {
+				multipliedWord += ",";
+			}
+		}
+		
+		return multipliedWord;
+				
+	}
 }
-
-

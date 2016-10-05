@@ -18,22 +18,11 @@ public class SimonOffTopic implements Chatbot {
 	};
 	public void talk() {
 
-		while(inOffTopicLoop){
-			if(offTopic<1){
-				userResponse = MaxMain.promptInput(firstPrompt);
-			}
-			else if (MaxMain.findKeyword(userResponse, "how", 0) >= 0) {
-				userResponse = MaxMain.promptInput(MaxMain.chooseFromStringArray(offTopicResponses));
+		MaxMain.printwrap((MaxMain.chooseFromStringArray(offTopicResponses)));
+						
 
-			}
-			else {
-				inOffTopicLoop = false;
-//				MaxMain.promptInputForever("");
-			}
-
-
-			offTopic++;
-		}
+			
+		
 	}
 
 

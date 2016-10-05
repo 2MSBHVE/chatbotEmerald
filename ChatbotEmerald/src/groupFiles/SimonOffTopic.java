@@ -22,9 +22,6 @@ public class SimonOffTopic implements Chatbot {
 		
 	}
 
-
-
-
 	public boolean isTriggered(String userInput) {
 
 		if(MaxMain.findKeyword(userInput, "how", 0) >= 0){
@@ -32,6 +29,7 @@ public class SimonOffTopic implements Chatbot {
 			return true;
 
 		}
+		
 		return false;
 	}
 

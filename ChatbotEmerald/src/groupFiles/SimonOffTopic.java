@@ -19,9 +19,6 @@ public class SimonOffTopic implements Chatbot {
 	public void talk() {
 
 		MaxMain.printwrap((MaxMain.chooseFromStringArray(offTopicResponses)));
-						
-
-			
 		
 	}
 

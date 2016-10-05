@@ -18,7 +18,7 @@ public class MaxMain {
 	static Chatbot offTopic;
 	
 //	economy triggered by "economy" "jobs" "manufacture" "wage(w/o 'war')" "
-//	fightback triggered by "stupid", "dumb", "dumbass", "fuck", "fake", "orange", "baby"
+//	fightback triggered by "stupid", "dumb", "dumbass", "f***", "fake", "orange", "baby"
 //	offTopic triggered by "how"
 	
 	public static void main(String[] args) {

@@ -2,65 +2,123 @@ package groupFiles;
 
 import java.util.Scanner;
 
-public class FriedmanMain {
+public class MaxMain {
 	
 	static String user;
 	static Scanner input;
 	static boolean inMainLoop;
 	static String response;
 	
-//	list all available chatbots under this class
-
-//	add group chatbots below (see example)
-//	static Chatbot school;
+	
+	
+	
+//	add group chatbots below
+	static Chatbot economy;
+	static Chatbot comeback;
+	static Chatbot offTopic;
+	
+	 
+	
+//	economy triggered by "economy" "jobs" "manufacture" "wage(w/o 'war')" "
+//	fightback triggered by "stupid", "dumb", "dumbass", "f***", "fake", "orange", "baby"
+//	offTopic triggered by "how"
 	
 	public static void main(String[] args) {
 //		demonstrateStringMethods();
+		printwrap("*DRAMATIC ENTRANCE*");
+		printwrap("*CROWD CHEERS*");
 		createFields();
 		promptName();
 //		promptInput("Please type something.");
-		promptInputForever((String)("Please type something, " + user + "."));
+		promptInputForever((String)("So what's your question, " + user + "?"));
 //		while(true){
 //			println(input.next());
 //		}
 	}
 	
 	public static void promptName() {
-		println("Enter your name.");
-		user = input.nextLine();
-		printwrap("Okay. For the rest of time, I will call you " + user + ". You may call me Computer. We should become friends.");
+		user = "";
+		
+		while(user.compareTo("A") < 0){
+			println("What's your name?");
+			user = input.nextLine();
+		}
+		
+		
+		
+		if (findKeyword(user, "Hillary", 0) >= 0 || (findKeyword(user, "Clinton", 0) >= 0 && findKeyword(user, "Bill", 0) < 0)) {
+			user = "Crooked Hillary";
+		}
+		else if (findKeyword(user, "Bernie", 0) >= 0 || findKeyword(user, "Sanders", 0) >= 0) {
+			user = "Crazy Bernie";
+		}
+		else if (findKeyword(user, "Marco", 0) >= 0 || findKeyword(user, "Rubio", 0) >= 0) {
+			user = "Little Marco";
+		}
+		else if (findKeyword(user, "Ted", 0) >= 0 || findKeyword(user, "Cruz", 0) >= 0) {
+			user = "Lyin' Ted";
+		}
+		else if (findKeyword(user, "Elizabeth", 0) >= 0 || findKeyword(user, "Warren", 0) >= 0) {
+			user = "Goofy Elizabeth";
+		}
+		else if (findKeyword(user, "Barack", 0) >= 0 || (findKeyword(user, "Obama", 0) >= 0 && findKeyword(user, "Michelle", 0) < 0)) {
+			user = "Baby Obama";
+		}
+		else if (findKeyword(user, "Putin", 0) >= 0 || (findKeyword(user, "Vladimir", 0) >= 0 && findKeyword(user, "Putin", 0) >= 0)) {
+			user = "Vladimir";
+			
+//			replaces "so we've got..."
+			printwrap("Ah, Vladimir, my friend and long-time supplier of young Slavic women!");
+			return;
+		}
+		
+		printwrap("So we've got " + user + " here ready to make America great again!");
 		
 	}
 
 	public static String promptInput(String prompt) {
-		println(prompt);
+		printwrap(prompt);
 		String userInput = input.nextLine();
 		return userInput;
 	}
 
 	public static void promptInputForever(String prompt) {
 		inMainLoop = true;
+		
+		int untriggeredCount = 0;
+		
 		while(inMainLoop){
-			prompt = "Hi, " + user + "! How are you?";
+			
 			response = promptInput(prompt);
-			if(findKeyword(response, "good", 0) >= 0){
-//				println("true");
-				println("That's wonderful! I'm glad you feel good.");
+			
+//			makes sure the user types something
+			while(response.equals("")){
+				response = promptInput(prompt);
 			}
 			
-			//response to liking school
-//			else if (school.isTriggered(response) >= 0){
-////				println("true");
-//				println("School is great! Tell me about school!");
-////				exit loop
-//				inMainLoop = false;
-////				go to school's talk method
-//				school.talk();
-//			}
+			if (economy.isTriggered(response)){
+				untriggeredCount = 0;
+				economy.talk(response);
+			}
+			
+			else if (comeback.isTriggered(response)){
+				untriggeredCount = 0;
+				comeback.talk();	
+			}
+			
+//			LEAVE OFFTOPICBOT LAST BECAUSE "HOW" IS A COMMON WORD!!!!!!!!!
+			else if (offTopic.isTriggered(response)){
+				untriggeredCount = 0;
+				offTopic.talk();
+				
+			}
 			
 			else{
-				println("I don't understand.");
+				untriggeredCount++;
+//				println("I don't understand." + untriggeredCount);
 			}
+			
+			prompt = MaxChangeMainPrompt.talk(untriggeredCount, user);
 		}
 	}
 	
@@ -83,23 +141,23 @@ public class FriedmanMain {
 //			check character in front, if it exists
 			if(pos > 0){
 				before = searchString.substring(pos-1, pos);
-				System.out.println("The character before us is " + before);
+//				System.out.println("The character before us is " + before);
 			}
 			
 //			check if there is a character after the keyword
 			if(pos + keyword.length() < searchString.length()){
 				after = searchString.substring((pos + keyword.length()),(pos + keyword.length() + 1));
-				System.out.println("The character after us is " + after);
+//				System.out.println("The character after us is " + after);
 			}
 			
 			if(before.compareTo("a") < 0 && after.compareTo("a") < 0 && noNegotiations(searchString, pos)){
-				System.out.println("Found " + keyword + " at " + pos);
+//				System.out.println("Found " + keyword + " at " + pos);
 				return pos;
 			}
 			else{
 //				pos + 1 is one space after our current position, so this finds the NEXT word
 				pos = searchString.indexOf(keyword, (pos + 1));
-				System.out.println("Did not find " + keyword + ", checking position " + pos);
+//				System.out.println("Did not find " + keyword + ", checking position " + pos);
 			}
 			
 		}
@@ -145,7 +203,9 @@ public class FriedmanMain {
 		user = "";
 		
 //		initialize group chatbots below
-//		school = new FriedmanSchool();
+		economy = new MaxEconomy();
+		comeback = new MaxFightBack();
+		offTopic = new SimonOffTopic();
 	}
 
 	public static void demonstrateStringMethods(){
@@ -168,7 +228,7 @@ public class FriedmanMain {
 	
 	public static void printwrap(String s){
 		String printString = "";
-		int cutoff = 35;
+		int cutoff = 70;
 //		check for words to add
 //		IWO s has length > 0
 		while(s.length() > 0){
@@ -220,5 +280,37 @@ public class FriedmanMain {
 		return currentCut;
 	}
 
+	static String chooseFromStringArray(String[] stringArray) {
+		int responseSelection = (int)(Math.random()*stringArray.length);
+		return stringArray[responseSelection];
+	}
+	
+	static String[] newPrompt(){
+		
+		String[][] askMes = {
+				{"Questions, ", "?"},
+				{"So what's your question, ", "?"},
+				{"Ask away, ", "."}
+				};
+		
+		int rand = (int) (Math.random()*askMes.length);
+		return askMes[rand];
+		
+	}
+	
+	static String multiplyWord(String word, int multiplier, boolean useSpaces, boolean useCommas){
+		String multipliedWord = "";
+		for(int i = 0; i < multiplier; i++){
+			if(useSpaces) {
+				multipliedWord += " ";
+			}
+			multipliedWord += word;
+			if(useCommas) {
+				multipliedWord += ",";
+			}
+		}
+		
+		return multipliedWord;
+				
+	}
 }
-

@@ -22,7 +22,7 @@ public class MaxEconomy implements Chatbot{
 	
 	
 	
-//	counts the number of times each specific response is displayed
+//	counts the number of times each specific response is printed
 	int jobsCount = 0;
 	int wagesCount0 = 0;
 	int manufacturingCount0 = 0;

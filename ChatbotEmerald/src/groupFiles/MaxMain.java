@@ -65,6 +65,9 @@ public class MaxMain {
 		else if (findKeyword(user, "Barack", 0) >= 0 || (findKeyword(user, "Obama", 0) >= 0 && findKeyword(user, "Michelle", 0) < 0)) {
 			user = "Baby Obama";
 		}
+		else if (findKeyword(user, "Machado", 0) >= 0 || (findKeyword(user, "Alicia", 0) >= 0 && findKeyword(user, "Machado", 0) < 0)) {
+			user = "Miss Housekeeping";
+		}
 		else if (findKeyword(user, "Putin", 0) >= 0 || (findKeyword(user, "Vladimir", 0) >= 0 && findKeyword(user, "Putin", 0) >= 0)) {
 			user = "Vladimir";
 			

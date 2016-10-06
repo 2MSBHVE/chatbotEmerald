@@ -16,4 +16,5 @@ Max Friedman, Joyce Feng, Simon Kahn
 * OffTopicBot
 
 **Joyce:**
-* 
+* HillaryBot
+* FlipFlopBot

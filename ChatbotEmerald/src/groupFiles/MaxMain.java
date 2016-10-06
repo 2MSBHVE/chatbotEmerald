@@ -16,6 +16,7 @@ public class MaxMain {
 	static Chatbot economy;
 	static Chatbot comeback;
 	static Chatbot offTopic;
+	static Chatbot hillary; 
 	
 	 
 	
@@ -106,12 +107,18 @@ public class MaxMain {
 				comeback.talk();	
 			}
 			
+			else if (hillary.isTriggered(response)){
+				hillary.talk(untriggeredCount);
+				untriggeredCount = 0;
+			}
+			
 //			LEAVE OFFTOPICBOT LAST BECAUSE "HOW" IS A COMMON WORD!!!!!!!!!
 			else if (offTopic.isTriggered(response)){
 				untriggeredCount = 0;
 				offTopic.talk();
 				
 			}
+		
 			
 			else{
 				untriggeredCount++;
@@ -206,6 +213,7 @@ public class MaxMain {
 		economy = new MaxEconomy();
 		comeback = new MaxFightBack();
 		offTopic = new SimonOffTopic();
+		hillary = new JoyceHillary();
 	}
 
 	public static void demonstrateStringMethods(){

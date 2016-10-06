@@ -56,4 +56,10 @@ public class MaxFightBack implements Chatbot {
 		return false;
 	}
 
+	@Override
+	public String talk(int count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

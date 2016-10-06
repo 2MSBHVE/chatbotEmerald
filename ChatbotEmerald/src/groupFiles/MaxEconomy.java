@@ -130,5 +130,11 @@ public class MaxEconomy implements Chatbot{
 			MaxMain.printwrap("The economy is failing. We need to improve the economy.");
 		}
 	}
+
+	@Override
+	public String talk(int count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
  
 }

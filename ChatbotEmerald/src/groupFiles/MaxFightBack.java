@@ -37,7 +37,15 @@ public class MaxFightBack implements Chatbot {
 				"fuck",
 				"fake",
 				"orange",
-				"baby"
+				"baby",
+				"idiot",
+				"deplorable",
+				"bigot",
+				"racist",
+				"disgusting",
+				"immature",
+				"misogynist",
+				"misogynistic"
 				};
 		
 		for (int i = 0; i < triggers.length; i++){

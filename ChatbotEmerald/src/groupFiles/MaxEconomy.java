@@ -87,8 +87,11 @@ public class MaxEconomy implements Chatbot{
 				"It's all gonna start with the wall. We're gonna employ lots and lots of people to build that wall. "
 				+ "Respectable jobs with good pay. And speaking of pay, who's gonna pay for it? That's right; Mexico.",
 				"I'm gonna bring jobs BACK TO AMERICA, unlike Crooked Hillary and her Wall Street friends.",
-				"We're gonna bring back jobs. I'm gonna make deals - great, great deals - with China that work in our favor, not theirs. "
-				+ "There's gonna be so much winning, I guarantee it.",
+				"We're gonna bring back jobs. I'm gonna make deals - great, great deals - with China that work in our favor, "
+				+ "not theirs. There's gonna be so much winning, I guarantee it.",
+				"I will be the greatest jobs president that God ever created. I tell you that.",
+				"I'll bring back our jobs from China, from Mexico, from Japan, from so many places."
+				+ "I'll bring back our jobs, and I'll bring back our money."
 				};
 		String[] wageResponses = {
 				(String)("There are" + MaxMain.multiplyWord("way", wagesCount0, true, false) 

@@ -50,7 +50,22 @@ public class MaxMiscellaneous implements Chatbot {
 				"Obamacare is a disaster. Big lie.",
 				"Yesterday, it came out that costs are going for people up 29, 39, 49, and even 55 percent, and deductibles are "
 				+ "through the roof. You have to be hit by a tractor, literally, a tractor, to use it, because the deductibles are "
-				+ "so high, it's virtually useless. It's virtually useless. It is a disaster."
+				+ "so high, it's virtually useless. It's virtually useless. It is a disaster.",
+				"We have to repeal Obamacare, and it can be -- and -- and it can be replaced with something much better for everybody. "
+				+ "Let it be for everybody. But much better and much less expensive for people and for the government. And we can do it.",
+				""
+				};
+		
+		String[] obamaResponses = {
+				"Obama is out playing golf. He might be on one of my courses. I would invite him, I actually would say. "
+				+ "I have the best courses in the world, so I'd say, you know what, if he wants to -- I have one right next to "
+				+ "the White House, right on the Potomac. If he'd like to play, that's fine.",
+				"All I have to say about Obama is that he's the Worst. President. Ever.",
+				"You know, when President Obama was elected, I said, \"Well, the one thing, I think he'll do well. I think he'll be a great "
+				+ "cheerleader for the country. I think he'd be a great spirit.\" He was vibrant. He was young. I really thought "
+				+ "that he would be a great cheerleader. But not a leader. But he wasn't a cheerleader. He's actually a negative force. "
+				+ "He's been a negative force. He wasn't a cheerleader; he was the opposite. We need somebody that can take the "
+				+ "brand of the United States and make it great again. It's not great again.",
 				};
 		
 		if (MaxMain.findKeyword(userTyped, "ISIS", 0) >= 0 

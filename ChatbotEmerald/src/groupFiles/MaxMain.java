@@ -112,8 +112,8 @@ public class MaxMain {
 			}
 			
 			else if (hillary.isTriggered(response)){
-				untriggeredCount = 0;
 				hillary.talk(untriggeredCount);
+				untriggeredCount = 0;
 			}
 			
 			else if (flipflop.isTriggered(response)){

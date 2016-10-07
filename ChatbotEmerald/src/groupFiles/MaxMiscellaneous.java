@@ -26,13 +26,6 @@ public class MaxMiscellaneous implements Chatbot {
 				+ "So now ISIS has the oil, and what they don't have, Iran has."
 				};
 		
-		String[] latinosResponses = {
-				"When Mexico sends its people, they're not sending their best. They're not sending you. They're not sending you."
-				+ "They're sending people that have lots of problems, and they're bringing those problems with us."
-				+ "They're bringing drugs. They're bringing crime. They're rapists. And some, I assume, are good people.",
-				""
-				};
-		
 		String[] middleEastResponses = {
 				"I was against the war in Iraq. Ask anyone in the world named Sean Hannity.",
 				"We spent $2 trillion in Iraq, $2 trillion. We lost thousands of lives, thousands in Iraq. "
@@ -43,8 +36,15 @@ public class MaxMiscellaneous implements Chatbot {
 				+ "But I said, \"Don't hit Iraq,\" because you're going to totally destabilize the Middle East. "
 				+ "Iran is going to take over the Middle East, Iran and somebody else will get the oil, and it turned out that "
 				+ "Iran is now taking over Iraq. Think of it. Iran is taking over Iraq, and they're taking it over big league.",
-				""
+				"Nuke it all."
 				};
+		
+		String[] latinosResponses = {
+				"When Mexico sends its people, they're not sending their best. They're not sending you. They're not sending you."
+				+ "They're sending people that have lots of problems, and they're bringing those problems with us."
+				+ "They're bringing drugs. They're bringing crime. They're rapists. And some, I assume, are good people.",
+				"I love latinos!"
+		};
 		
 		String[] obamacareResponses = {
 				"Obamacare is a disaster. Big lie.",
@@ -52,8 +52,7 @@ public class MaxMiscellaneous implements Chatbot {
 				+ "through the roof. You have to be hit by a tractor, literally, a tractor, to use it, because the deductibles are "
 				+ "so high, it's virtually useless. It's virtually useless. It is a disaster.",
 				"We have to repeal Obamacare, and it can be -- and -- and it can be replaced with something much better for everybody. "
-				+ "Let it be for everybody. But much better and much less expensive for people and for the government. And we can do it.",
-				""
+				+ "Let it be for everybody. But much better and much less expensive for people and for the government. And we can do it."
 				};
 		
 		String[] obamaResponses = {
@@ -68,8 +67,7 @@ public class MaxMiscellaneous implements Chatbot {
 				+ "brand of the United States and make it great again. It's not great again.",
 				};
 		
-		if (MaxMain.findKeyword(userTyped, "ISIS", 0) >= 0 
-				|| MaxMain.findKeyword(userTyped, "ISIL", 0) >= 0
+		if (MaxMain.findKeyword(userTyped, "ISIL", 0) >= 0 
 				|| MaxMain.findKeyword(userTyped, "Islamic State", 0) >= 0
 				|| MaxMain.findKeyword(userTyped, "Al Qaeda", 0) >= 0
 				|| MaxMain.findKeyword(userTyped, "Terrorism", 0) >= 0) {
@@ -82,18 +80,28 @@ public class MaxMiscellaneous implements Chatbot {
 			MaxMain.printwrap(MaxMain.chooseFromStringArray(middleEastResponses));
 		}
 		
+		if (MaxMain.findKeyword(userTyped, "latinos", 0) >= 0 
+				|| MaxMain.findKeyword(userTyped, "mexicans", 0) >= 0
+				|| MaxMain.findKeyword(userTyped, "immigrant", 0) >= 0
+				|| MaxMain.findKeyword(userTyped, "immigrants", 0) >= 0) {
+			MaxMain.printwrap(MaxMain.chooseFromStringArray(latinosResponses));
+		}
+		
 		if (MaxMain.findKeyword(userTyped, "Obamacare", 0) >= 0 
 				|| MaxMain.findKeyword(userTyped, "Affordable Care", 0) >= 0) {
-			MaxMain.printwrap(MaxMain.chooseFromStringArray(middleEastResponses));
+			MaxMain.printwrap(MaxMain.chooseFromStringArray(obamacareResponses));
+		}
+		
+		if (MaxMain.findKeyword(userTyped, "Obama", 0) >= 0 
+				|| MaxMain.findKeyword(userTyped, "Barack", 0) >= 0) {
+			MaxMain.printwrap(MaxMain.chooseFromStringArray(obamaResponses));
 		}
 		
 	}
 
 	@Override
 	public boolean isTriggered(String userInput) {
-		if (MaxMain.findKeyword(userInput, "Iraq", 0) >= 0){
-			return true;
-		}
+		
 		if (MaxMain.findKeyword(userInput, "ISIS", 0) >= 0 
 				|| MaxMain.findKeyword(userInput, "ISIL", 0) >= 0
 				|| MaxMain.findKeyword(userInput, "Islamic State", 0) >= 0
@@ -104,6 +112,23 @@ public class MaxMiscellaneous implements Chatbot {
 		if (MaxMain.findKeyword(userInput, "Iraq", 0) >= 0 
 				|| MaxMain.findKeyword(userInput, "Iran", 0) >= 0
 				|| MaxMain.findKeyword(userInput, "Middle East", 0) >= 0) {
+			return true;
+		}
+		
+		if (MaxMain.findKeyword(userInput, "latinos", 0) >= 0 
+				|| MaxMain.findKeyword(userInput, "mexicans", 0) >= 0
+				|| MaxMain.findKeyword(userInput, "immigrant", 0) >= 0
+				|| MaxMain.findKeyword(userInput, "immigrants", 0) >= 0) {
+			return true;
+		}
+		
+		if (MaxMain.findKeyword(userInput, "Obamacare", 0) >= 0 
+				|| MaxMain.findKeyword(userInput, "Affordable Care", 0) >= 0) {
+			return true;
+		}
+		
+		if (MaxMain.findKeyword(userInput, "Obama", 0) >= 0 
+				|| MaxMain.findKeyword(userInput, "Barack", 0) >= 0) {
 			return true;
 		}
 		

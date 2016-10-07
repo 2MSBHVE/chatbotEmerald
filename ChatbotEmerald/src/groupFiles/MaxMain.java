@@ -18,7 +18,7 @@ public class MaxMain {
 	static Chatbot offTopic;
 	static Chatbot hillary; 
 	static Chatbot misc;
-	
+	static Chatbot flipflop;
 	 
 	
 //	economy triggered by "economy" "jobs" "manufacture" "wage(w/o 'war')" "
@@ -114,6 +114,11 @@ public class MaxMain {
 			else if (hillary.isTriggered(response)){
 				untriggeredCount = 0;
 				hillary.talk(untriggeredCount);
+			}
+			
+			else if (flipflop.isTriggered(response)){
+				flipflop.talk(response);
+				untriggeredCount = 0;
 			}
 			
 			else if (misc.isTriggered(response)){
@@ -223,6 +228,8 @@ public class MaxMain {
 		comeback = new MaxFightBack();
 		offTopic = new SimonOffTopic();
 		hillary = new JoyceHillary();
+		flipflop = new JoyceFlipFlop();
+		misc = new MaxMiscellaneous();
 	}
 
 	public static void demonstrateStringMethods(){

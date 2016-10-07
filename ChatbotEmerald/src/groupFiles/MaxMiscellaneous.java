@@ -67,6 +67,12 @@ public class MaxMiscellaneous implements Chatbot {
 				+ "brand of the United States and make it great again. It's not great again.",
 				};
 		
+		String[] helloResponses = {
+				"Hi.",
+				"Hello.",
+				"Hello to you too."
+				};
+		
 		if (MaxMain.findKeyword(userTyped, "ISIL", 0) >= 0 
 				|| MaxMain.findKeyword(userTyped, "Islamic State", 0) >= 0
 				|| MaxMain.findKeyword(userTyped, "Al Qaeda", 0) >= 0
@@ -95,6 +101,12 @@ public class MaxMiscellaneous implements Chatbot {
 		if (MaxMain.findKeyword(userTyped, "Obama", 0) >= 0 
 				|| MaxMain.findKeyword(userTyped, "Barack", 0) >= 0) {
 			MaxMain.printwrap(MaxMain.chooseFromStringArray(obamaResponses));
+		}
+		
+		if (MaxMain.findKeyword(userTyped, "Hello", 0) >= 0 
+				|| MaxMain.findKeyword(userTyped, "Hi", 0) >= 0
+				|| MaxMain.findKeyword(userTyped, "Greetings", 0) >= 0) {
+			MaxMain.printwrap(MaxMain.chooseFromStringArray(helloResponses));
 		}
 		
 	}
@@ -131,6 +143,13 @@ public class MaxMiscellaneous implements Chatbot {
 				|| MaxMain.findKeyword(userInput, "Barack", 0) >= 0) {
 			return true;
 		}
+		
+		if (MaxMain.findKeyword(userInput, "Hello", 0) >= 0 
+				|| MaxMain.findKeyword(userInput, "Hi", 0) >= 0
+				|| MaxMain.findKeyword(userInput, "Greetings", 0) >= 0) {
+			return true;
+		}
+		
 		
 		return false;
 	}

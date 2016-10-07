@@ -17,6 +17,7 @@ public class MaxMain {
 	static Chatbot comeback;
 	static Chatbot offTopic;
 	static Chatbot hillary; 
+	static Chatbot misc;
 	
 	 
 	
@@ -111,8 +112,13 @@ public class MaxMain {
 			}
 			
 			else if (hillary.isTriggered(response)){
-				hillary.talk(untriggeredCount);
 				untriggeredCount = 0;
+				hillary.talk(untriggeredCount);
+			}
+			
+			else if (misc.isTriggered(response)){
+				untriggeredCount = 0;
+				misc.talk(response);
 			}
 			
 //			LEAVE OFFTOPICBOT LAST BECAUSE "HOW" IS A COMMON WORD!!!!!!!!!

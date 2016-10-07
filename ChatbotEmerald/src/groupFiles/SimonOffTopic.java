@@ -66,9 +66,9 @@ public class SimonOffTopic implements Chatbot {
 	}
 
 	@Override
-	public String talk(int count) {
+	public void talk(int count) {
 		// TODO Auto-generated method stub
-		return null;
+		return;
 	}
 
 }

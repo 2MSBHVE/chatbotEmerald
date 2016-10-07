@@ -9,6 +9,6 @@ public interface Chatbot {
 	
 	public boolean isTriggered(String userInput);
 
-	public String talk(int count);
+	public void talk(int count);
 	
 }

@@ -11,6 +11,7 @@ Max Friedman, Joyce Feng, Simon Kahn
 **MAX:**
 * EconomyBot
 * Gibberish (qwertyuiop and stuff like that)
+* MiscellaneousBot
   
 **Simon:**
 * OffTopicBot

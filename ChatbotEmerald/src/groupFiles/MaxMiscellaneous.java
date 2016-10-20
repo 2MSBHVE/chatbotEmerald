@@ -43,7 +43,8 @@ public class MaxMiscellaneous implements Chatbot {
 				"When Mexico sends its people, they're not sending their best. They're not sending you. They're not sending you."
 				+ "They're sending people that have lots of problems, and they're bringing those problems with us."
 				+ "They're bringing drugs. They're bringing crime. They're rapists. And some, I assume, are good people.",
-				"I love latinos!"
+				"I love latinos!",
+				"There are definitely some bad hombres out there."
 		};
 		
 		String[] obamacareResponses = {

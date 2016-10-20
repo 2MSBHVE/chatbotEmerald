@@ -1,15 +1,12 @@
 package groupFiles;
 
+//push test
+
 public class MaxEconomy implements Chatbot{
 
 	private int numTimesAsked = 0;
 	
 	private String userResponse;
-	
-	private String firstPrompt = "Ah, the economy. ";
-	
-	private String[] strategyQuestions = {"We got any questions?",
-			"Any questions?"};
 	
 	private String[] strategyResponses = {
 			"We're gonna bring back jobs, and it's gonna be great.",
@@ -99,8 +96,11 @@ public class MaxEconomy implements Chatbot{
 				"The jobs created by the wall will pay, and they'll pay well, and they'll be paid by Mexico.",
 				"If you're making minimum wage you're probably an immigrant anyway. I love immigrants. Love em.",
 				};
-		String[] manufacturingResponses = {(String)("America is going to manufacture" + MaxMain.multiplyWord("bigly", manufacturingCount0, true, false) + " again!"),
-				"First we're gonna get rid of all those Japanese cars. Then we're gonna get rid of Japan."
+		String[] manufacturingResponses = {
+				(String)("America is going to manufacture" + MaxMain.multiplyWord("bigly", manufacturingCount0, true, false) + " again!"),
+				"First we're gonna get rid of all those Japanese cars. Then we're gonna get rid of Japan.",
+				"Sometimes I go past those abandoned factories. It's a disaster.",
+				"Hillary had thirty years to end NAFTA. I will. She called the TPP the gold standard of trade deals. I don't."
 				};
 		
 		userTyped = userTyped.toLowerCase();

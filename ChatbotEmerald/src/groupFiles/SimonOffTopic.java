@@ -16,7 +16,7 @@ public class SimonOffTopic implements Chatbot {
 //	private int offTopicCount7 = 0;
 //	private int offTopicCount8 = 0;
 	
-	private int[] offTopicCounts = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+	private int[] offTopicCounts = new int[9];
 	
 	public void talk() {
 		
